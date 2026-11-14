@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minecraft-mod-manager"
+version = "0.1.0"
+description = "A utility tool for downloading, updating, and managing Minecraft mods from CurseForge and Modrinth."
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Aldrin Lubert Suarez Abad" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "requests>=2.28.0",
+    "click>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.1.0",
+]
+
+[project.scripts]
+minecraft-mod-manager = "minecraft_mod_manager.cli:main"
+mmm = "minecraft_mod_manager.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["minecraft_mod_manager*"]
